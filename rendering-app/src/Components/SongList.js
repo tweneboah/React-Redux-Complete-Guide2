@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { selectSongs } from '../actions';
 
 
-
 class SongList extends Component {
     
     renderList () {
@@ -30,8 +29,10 @@ class SongList extends Component {
     }
 }
 
+//CONNECT FUNCTION
+
 const mapStateToProps = (state) => {
-  console.log(state)
+  
     return { songs: state.songs }
 }
 
