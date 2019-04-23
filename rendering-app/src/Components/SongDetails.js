@@ -2,18 +2,18 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 
-const SongDetails2 = (props) => {
-    console.log(props)
-    if(!props.song){
-        return <div>Select a song</div>
-    }
-    return(
-        <div>
-           <h1>{props.song.title}</h1>
-           <h1>{props.song.duration}</h1>
-        </div>
-    )
-}
+// const SongDetails2 = (props) => {
+//     console.log(props)
+//     if(!props.song){
+//         return <div>Select a song</div>
+//     }
+//     return(
+//         <div>
+//            <h1>{props.song.title}</h1>
+//            <h1>{props.song.duration}</h1>
+//         </div>
+//     )
+// }
 
 
 //USING Destructuring to destructure the object
