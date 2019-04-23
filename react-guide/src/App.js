@@ -7,21 +7,29 @@ import Person from './Person/Person'
 class App extends React.Component {
   state = { 
     persons: [
-      {name: 'Emmanuel', age :23},
-      {name: 'Tweneboah', age :30},
-      {name: 'Prince', age :16}
+      {id:'fdfdd', name: 'Emmanuel', age :23},
+      {id:'sdsdsd',name: 'Tweneboah', age :30},
+      {id:'fgftrtr',name: 'Prince', age :16}
     ],
     showPersons: false
    }
 
 
-  nameChangeHandler = (event) => {
+  nameChangeHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex((myPerson) => {
+      return myPerson.id === id
+    })
+
+    const person = {
+      ...this.state.persons[personIndex]
+    }
+    person.name = event.target.value;
+
+    const persons = [...this.state.persons];
+    persons[personIndex] = person
+
     this.setState({
-      persons: [
-       {name: 'Emmanuel 3', age :23},
-       {name: event.target.value , age :30},
-       {name: 'Prince 3', age :16}
-      ]
+      persons: persons
     })
   }
 
@@ -61,6 +69,8 @@ class App extends React.Component {
             name = {person.name}
              age={person.age}
              click ={() => this.deletePersonHandler(index)}
+             key={person.id}
+             changed ={(event)=>this.nameChangeHandler(event, person.id)}
             />
           })}
        </div>
