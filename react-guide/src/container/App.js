@@ -1,15 +1,34 @@
 import React from 'react';
-import './App.css';
+import '../container/App.css';
 
 //COMPONENTS
-import Person from './Person/Person'
+import Person from '../Components/Persons/Person/Person';
+import Persons from '../Components/Persons/Persons';
 
 class App extends React.Component {
   state = { 
     persons: [
       {id:'fdfdd', name: 'Emmanuel', age :23},
-      {id:'sdsdsd',name: 'Tweneboah', age :30},
-      {id:'fgftrtr',name: 'Prince', age :16}
+      {id:'teee',name: 'Tweneboah', age :30},
+      {id:'fgftrrfrtr',name: 'Prince', age :16},
+      {id:'fdfdd', name: 'Atom', age :23},
+      {id:'sdsdffsd',name: 'Mark', age :30},
+      {id:'fccgftrtr',name: 'Derrick', age :16},
+      {id:'aaaa', name: 'Sam', age :23},
+      {id:'sssed',name: 'AB', age :30},
+      {id:'jjgg',name: 'Came', age :16},
+      {id:'reed', name: 'Enock', age :23},
+      {id:'yugf',name: 'Evans', age :30},
+      {id:'ddfcc',name: 'Narol', age :16},
+      {id:'ertrdd', name: 'Bella', age :23},
+      {id:'ffchh',name: 'Winnie', age :30},
+      {id:'esdff',name: 'Smile', age :16},
+      {id:'uuhgg', name: 'Sad', age :23},
+      {id:'ddffff',name: 'Jsu', age :30},
+      {id:'cccc',name: 'Carrick', age :16},
+      {id:'utrrr', name: 'Sophoa', age :23},
+      {id:'cccf',name: 'Tweneboah', age :30},
+      {id:'ccggf',name: 'Prince', age :16}
     ],
     showPersons: false
    }
@@ -64,15 +83,7 @@ class App extends React.Component {
     if(this.state.showPersons) {
       persons = (
         <div >
-          {this.state.persons.map((person, index) => {
-            return <Person 
-            name = {person.name}
-             age={person.age}
-             click ={() => this.deletePersonHandler(index)}
-             key={person.id}
-             changed ={(event)=>this.nameChangeHandler(event, person.id)}
-            />
-          })}
+         
        </div>
     
       )
@@ -86,6 +97,7 @@ class App extends React.Component {
        <button style={style}  onClick={this.togglePersonHandler}>Toggle Name</button>
          
          {persons}
+         <Persons persons={this.state.persons}  clicked = {this.deletePersonHandler} changed = {this.togglePersonHandler}/>
    
     </div>
      );
