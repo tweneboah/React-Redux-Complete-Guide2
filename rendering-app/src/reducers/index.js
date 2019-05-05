@@ -5,11 +5,10 @@ const songsReducer = () => {
     return [
         {title: 'Jesus', duration: '2:9s'},
         {title: 'God', duration: '6: 2s'},
-        {title: 'Lord', duration: '9: 2s'}
+        {title: 'Lord', duration: '9: 2s'},
+        {title: 'Forgive', duration: '9: 2s'}
     ];
 };
-
-
 
 
 const selectedSongReducer = (selectedSong=null, action) => {
